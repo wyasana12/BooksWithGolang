@@ -20,7 +20,7 @@ func ConnectDB() {
 		panic("Failed To Connect Database")
 	}
 
-	db.AutoMigrate(&models.Author{})
+	db.AutoMigrate(&models.Author{}, &models.Book{})
 
 	DB = db
 	log.Println("Database Connected")
